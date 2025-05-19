@@ -10,11 +10,22 @@
 
 <body>
 
-  <h1>Welkom</h1>
+<main>
 
+  <section class="intro">  <!-- hier komt de eerste sectie van de pagina -->
+    <h1>Escape Room</h1>
+    <p>Welkom bij het Verlaten museum!</p>
+  </section>
 
-  <button><a href="room_1.php">Klik hier voor een demonstratie van kamer 1</a></button>
+  <section class="rooms">  <!-- hier komt de tweede sectie van de pagina -->
+    <h2>Rooms</h2>
+    <ul>
+      <li><a href="room_1.php">Verhaal</a></li>
+      <li><a href="room_2.php">Begin spel</a></li>
+    </ul>
+  </section>
 
+</main>
 </body>
 
 </html>
