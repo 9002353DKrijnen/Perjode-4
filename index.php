@@ -10,22 +10,30 @@
 
 <body>
 
-<main>
+  <main>
 
-  <section class="intro">  <!-- hier komt de eerste sectie van de pagina -->
-    <h1>Escape Room</h1>
-    <p>Welkom bij het Verlaten museum!</p>
-  </section>
+    <section class="intro"> <!-- hier komt de eerste sectie van de pagina -->
+      <h1>Escape Room</h1>
+      <p>Welkom bij het Verlaten museum!</p>
+    </section>
 
-  <section class="rooms">  <!-- hier komt de tweede sectie van de pagina -->
-    <h2>Rooms</h2>
-    <ul>
-      <li><a href="room_1.php">Verhaal</a></li>
-      <li><a href="room_2.php">Begin spel</a></li>
-    </ul>
-  </section>
+    <section class="rooms"> <!-- hier komt de tweede sectie van de pagina -->
+      <h2>Main story</h2>
+      <ul>
+        <li id="story">Verhaal</li>
+        <p> Het is 1885. Een storm raast door de nacht.
+          Jij en je familie zoeken beschutting en vinden die in een oud, verlaten museum gewijd aan Napoleon Bonaparte. </p>
+        <p>Maar er is een probleem.
 
-</main>
+          De deur slaat achter jullie dicht... en gaat niet meer open.
+          Napoleon III is al 14 jaar dood. Zijn beroemde oom, Napoleon I, rust al 64 jaar in zijn graf — of toch niet?
+
+          Jullie moeten een uitweg vinden. Maar niets in dit museum is wat het lijkt.</p>
+        <li><a href="room_1.php">Begin spel</a></li>
+      </ul>
+    </section>
+
+  </main>
 </body>
 
 </html>
