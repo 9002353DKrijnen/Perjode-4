@@ -1,6 +1,59 @@
 body {
   font-family: Arial, sans-serif;
   text-align: center;
+  background-color: black;
+}
+body p {
+  color: white;
+}
+
+main {
+  display: flex;
+}
+
+#titleIndex {
+  color: white;
+  display: block;
+  width: 10%;
+  size-adjust: inherit;
+  margin-left: 25%;
+  white-space: nowrap;
+  font-family: Impact, Haettenschweiler, "Arial Narrow Bold", sans-serif;
+}
+
+.buttons {
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+  justify-content: flex-start;
+  margin: auto;
+  transform: translateX(-400px);
+  width: 40%;
+  height: 17%;
+  gap: 40px;
+}
+
+.button {
+  border: 2px solid white;
+  border-radius: 15px;
+  padding: 10px;
+  margin: 10px;
+  width: 300px;
+}
+.button:hover {
+  cursor: pointer;
+  transform: scale(1.3);
+}
+
+#imgIndex {
+  width: 70%;
+  height: 100vh;
+  margin-right: 15%;
+}
+
+#imgIndex img {
+  width: 100%;
+  height: 100%;
 }
 
 a {
