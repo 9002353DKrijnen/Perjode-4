@@ -1,12 +1,13 @@
 <?php
-$server = "localhost"; 
-$username = "root";
-$password = ""; 
-$db = "escaperoom"; //pas dit aan indien de naam van jullie database anders is
+$host = 'localhost';
+$dbname = 'escape-room'; 
+$username = 'root'; 
+$password = ''; 
 
 try {
-  $db_connection = new PDO("mysql:host=$server; dbname=$db", $username, $password);
-  $db_connection->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
+    $conn = new PDO("mysql:host=$host;dbname=$dbname;charset=utf8", $username, $password);
+    $conn->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
 } catch (PDOException $e) {
-  echo "Verbinding mislukt" . $e->getMessage();
+    die("Databaseverbinding mislukt: " . $e->getMessage());
 }
+?>
