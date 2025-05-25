@@ -15,7 +15,8 @@
     <h1 id="titleIndex">Code Napoleon</h1>
 
     <div class="buttons">
-      <section class="button">
+      <!-- a button for with an id so we can easily use it for javascript's onclick -->
+      <section class="button" id="storyBox">
         <p>Verhaal</p>
       </section>
 
@@ -38,6 +39,7 @@
 
 
   </main>
+  <script src="./app.js"></script>
 </body>
 
 </html>
