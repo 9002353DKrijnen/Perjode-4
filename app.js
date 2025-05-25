@@ -32,7 +32,7 @@ storyBox.onclick = function () {
         // add the story now :D
         let story = document.createElement("div");
         // story context
-        story.textContent = "Jij en je vrienden zijn gevallen door een luik in een museum. Jullie zijn beland in een ouder deel van het museum. Onderdeel van deze museum is Napoleon! Vind samen met je maatje alle antwoorden tot de vragen en ontsnap uit de museum!";
+        story.textContent = "Jij en je vrienden zijn door een luik gevallen in een museum. Jullie zijn beland in een ouder deel van het gebouw. Een onderdeel van dit museum is Napoleon! Vind samen met je maatje alle antwoorden op de vragen en ontsnap uit het museum!";
         //add both story and overlay
         document.body.appendChild(overlay);
         overlay.appendChild(story);
