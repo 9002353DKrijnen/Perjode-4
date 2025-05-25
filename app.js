@@ -1,5 +1,6 @@
 /* Story is done in  Dutch. The code is written in english and so are the comments. 
-We will use a onclick event to open the box that displays a cool story! */
+We will use a onclick event to open the box that displays a cool story! 
+Ahmad - Damiën*/
 
 let storyBox = document.getElementById("storyBox");
 
@@ -9,6 +10,8 @@ storyBox.onclick = function () {
 
     if (!existingOverlay) {
         let overlay = document.createElement("div");
+
+        // CSS and ID for identification(makes it easier to remove when clicked again)
         overlay.id = "storyOverlay";
         overlay.style.position = "fixed";
         overlay.style.top = 0;
@@ -26,12 +29,14 @@ storyBox.onclick = function () {
         overlay.style.cursor = "pointer";
 
 
-
+        // add the story now :D
         let story = document.createElement("div");
+        // story context
         story.textContent = "Jij en je vrienden zijn gevallen door een luik in een museum. Jullie zijn beland in een ouder deel van het museum. Onderdeel van deze museum is Napoleon! Vind samen met je maatje alle antwoorden tot de vragen en ontsnap uit de museum!";
-        overlay.appendChild(story);
+        //add both story and overlay
         document.body.appendChild(overlay);
-
+        overlay.appendChild(story);
+        // wipe overlay when clicked and existingOverlay exists ( the !existingOvetlay)
         overlay.onclick = () => overlay.remove();
 
 
