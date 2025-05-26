@@ -13,7 +13,7 @@ if(!isset($_SESSION['start_time'])) {
     $_SESSION['start_time'] = time();
 
     // set a duration in seconds
-    $_SESSION['duration'] = 10;
+    $_SESSION['duration'] = 300;
 
 
 
