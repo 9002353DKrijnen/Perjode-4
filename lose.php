@@ -10,3 +10,11 @@
     <a href="index.php" style="color: white;">Terug naar start</a>
 </body>
 </html>
+<?php
+
+// wipe session
+session_start();
+sleep(5);
+session_unset();
+session_destroy();
+exit;

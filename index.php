@@ -1,3 +1,5 @@
+
+
 <html>
 <html lang="en">
 
@@ -22,7 +24,7 @@
 
       <section class="button">
         <a href="room_1.php">
-          <p>Start</p>
+          <p id="start">Start</p>
         </a>
       </section>
 

@@ -1,6 +1,42 @@
 <?php
 session_start();
 include 'dbcon.php';
+// let a timer play for 500 seconds
+// session start 
+
+
+// if there's not an active session at this time there will be one made.
+
+if(!isset($_SESSION['start_time'])) {
+
+    // create a start time to compare to.
+    $_SESSION['start_time'] = time();
+
+    // set a duration in seconds
+    $_SESSION['duration'] = 10;
+
+
+
+}
+
+// endtime is being calculated by adding the duration to the start time. If it expires the user will be sent to lose.php
+
+// current time in $currentTime with the functions time()
+
+$endTime = $_SESSION['start_time'] + $_SESSION['duration'];
+
+
+// write timer to screen
+$timeleft = $endTime - time();
+echo $timeleft;
+// the comparision itself is done here.
+
+if(time() > $endTime) {
+    header("Location: lose.php");
+    exit;
+}
+
+
 
 $roomId = 1;
 $questionIndex = $_SESSION['questionIndex'] ?? 0;
@@ -52,5 +88,7 @@ $currentQuestion = $questions[$questionIndex];
     </form>
 
     <p><a href="room_2.php" style="color: lightblue;">Ga naar Kamer 2</a></p>
+
+    <script src="./app.js"></script>
 </body>
 </html>
