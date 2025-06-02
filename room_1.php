@@ -87,7 +87,6 @@ $currentQuestion = $questions[$questionIndex];
         <button type="submit">Beantwoord</button>
     </form>
 
-    <p><a href="room_2.php" style="color: lightblue;">Ga naar Kamer 2</a></p>
 
     <script src="./app.js"></script>
 </body>
