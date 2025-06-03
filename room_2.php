@@ -2,6 +2,35 @@
 session_start();
 include 'dbcon.php';
 
+if(!isset($_SESSION['start_time'])) {
+
+    // create a start time to compare to.
+    $_SESSION['start_time'] = time();
+
+    // set a duration in seconds
+    $_SESSION['duration'] = 300;
+
+
+
+}
+
+// endtime is being calculated by adding the duration to the start time. If it expires the user will be sent to lose.php
+
+// current time in $currentTime with the functions time()
+
+$endTime = $_SESSION['start_time'] + $_SESSION['duration'];
+
+
+// write timer to screen
+$timeleft = $endTime - time();
+echo $timeleft;
+// the comparision itself is done here.
+
+if(time() > $endTime) {
+    header("Location: lose.php");
+    exit;
+}
+
 $roomId = 2;
 $questionIndex = $_SESSION['questionIndex2'] ?? 0;
 

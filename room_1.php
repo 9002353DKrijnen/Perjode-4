@@ -61,7 +61,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
 
         if ($questionIndex >= count($questions)) {
             $_SESSION['questionIndex'] = 0;
-            header("Location: win.php");
+            header("Location: room_2.php");
             exit;
         }
     } else {
