@@ -1,9 +1,10 @@
 /* Story is done in  Dutch. The code is written in english and so are the comments. 
 We will use a onclick event to open the box that displays a cool story! 
 Ahmad - Damiën*/
+let currentWebpage = window.location.href;
 
 let storyBox = document.getElementById("storyBox");
-
+if(currentWebpage.includes("index.php")) {
 storyBox.onclick = function () {
     // check firstly if the overlay already exists, so we won't display it twice or ruin the website
     let existingOverlay = document.getElementById("storyOverlay");
@@ -43,4 +44,27 @@ storyBox.onclick = function () {
     }
 
 }
+}
 
+
+// if current webpage is room_1.php or room_2.php
+if (currentWebpage.includes("room_1.php") || currentWebpage.includes("room_2.php")) {
+    // string to int
+    let time = parseInt(document.getElementById("timeRemaining").textContent);
+
+    function updateTimer() {
+        // stop timer if time <= 0
+        if (time <= 0){ return;
+        }
+
+        time--;
+
+        let m = Math.floor(time / 60);
+        let s = time % 60;
+        document.getElementById("timeRemaining").textContent = `${m}:${s < 10 ? '0' : ''}${s}`;
+
+        setTimeout(updateTimer, 1000);
+    }
+
+    updateTimer();
+}
