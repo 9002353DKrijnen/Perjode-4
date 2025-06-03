@@ -13,7 +13,7 @@ if (!isset($_SESSION['start_time'])) {
     $_SESSION['start_time'] = time();
 
     // set a duration in seconds
-    $_SESSION['duration'] = 300;
+    $_SESSION['duration'] = 20;
 }
 
 // endtime is being calculated by adding the duration to the start time. If it expires the user will be sent to lose.php

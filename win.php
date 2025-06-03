@@ -14,7 +14,6 @@
 <?php
 // wipe session
 session_start();
-sleep(2);
 session_unset();
 session_destroy();
 exit;

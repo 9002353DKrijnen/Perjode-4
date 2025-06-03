@@ -4,57 +4,64 @@ Ahmad - Damiën*/
 let currentWebpage = window.location.href;
 
 let storyBox = document.getElementById("storyBox");
-if(currentWebpage.includes("index.php")) {
-storyBox.onclick = function () {
-    // check firstly if the overlay already exists, so we won't display it twice or ruin the website
-    let existingOverlay = document.getElementById("storyOverlay");
+if (currentWebpage.includes("index.php")) {
+    storyBox.onclick = function () {
+        // check firstly if the overlay already exists, so we won't display it twice or ruin the website
+        let existingOverlay = document.getElementById("storyOverlay");
 
-    if (!existingOverlay) {
-        let overlay = document.createElement("div");
+        if (!existingOverlay) {
+            let overlay = document.createElement("div");
 
-        // CSS and ID for identification(makes it easier to remove when clicked again)
-        overlay.id = "storyOverlay";
-        overlay.style.position = "fixed";
-        overlay.style.top = 0;
-        overlay.style.left = 0;
-        overlay.style.width = "100%";
-        overlay.style.height = "100%";
-        overlay.style.background = "rgba(0,0,0,0.8)";
-        overlay.style.color = "white";
-        overlay.style.display = "flex";
-        overlay.style.justifyContent = "center";
-        overlay.style.alignItems = "center";
-        overlay.style.fontSize = "1.5em";
-        overlay.style.textAlign = "center";
-        overlay.style.zIndex = "1";
-        overlay.style.cursor = "pointer";
+            // CSS and ID for identification(makes it easier to remove when clicked again)
+            overlay.id = "storyOverlay";
+            overlay.style.position = "fixed";
+            overlay.style.top = 0;
+            overlay.style.left = 0;
+            overlay.style.width = "100%";
+            overlay.style.height = "100%";
+            overlay.style.background = "rgba(0,0,0,0.8)";
+            overlay.style.color = "white";
+            overlay.style.display = "flex";
+            overlay.style.justifyContent = "center";
+            overlay.style.alignItems = "center";
+            overlay.style.fontSize = "1.5em";
+            overlay.style.textAlign = "center";
+            overlay.style.zIndex = "1";
+            overlay.style.cursor = "pointer";
 
 
-        // add the story now :D
-        let story = document.createElement("div");
-        // story context
-        story.textContent = "Jij en je vrienden zijn door een luik gevallen in een museum. Jullie zijn beland in een ouder deel van het gebouw. Een onderdeel van dit museum is Napoleon! Vind samen met je maatje alle antwoorden op de vragen en ontsnap uit het museum!";
-        //add both story and overlay
-        document.body.appendChild(overlay);
-        overlay.appendChild(story);
-        // wipe overlay when clicked and existingOverlay exists ( the !existingOvetlay)
-        overlay.onclick = () => overlay.remove();
+            // add the story now :D
+            let story = document.createElement("div");
+            // story context
+            story.textContent = "Jij en je vrienden zijn door een luik gevallen in een museum. Jullie zijn beland in een ouder deel van het gebouw. Een onderdeel van dit museum is Napoleon! Vind samen met je maatje alle antwoorden op de vragen en ontsnap uit het museum!";
+            //add both story and overlay
+            document.body.appendChild(overlay);
+            overlay.appendChild(story);
+            // wipe overlay when clicked and existingOverlay exists ( the !existingOvetlay)
+            overlay.onclick = () => overlay.remove();
 
+
+        }
 
     }
-
-}
 }
 
 
 // if current webpage is room_1.php or room_2.php
 if (currentWebpage.includes("room_1.php") || currentWebpage.includes("room_2.php")) {
+    // check if time <= 0
+    
     // string to int
     let time = parseInt(document.getElementById("timeRemaining").textContent);
-
+ if (time <= 0){ window.location.href = "lose.php";
+        }
+       // tijd functie
     function updateTimer() {
         // stop timer if time <= 0
-        if (time <= 0){ return;
+        // maak vergelijking
+         if (time <= 0 ) {
+            window.location.href = "lose.php";
+            return;
         }
 
         time--;
@@ -64,7 +71,9 @@ if (currentWebpage.includes("room_1.php") || currentWebpage.includes("room_2.php
         document.getElementById("timeRemaining").textContent = `${m}:${s < 10 ? '0' : ''}${s}`;
 
         setTimeout(updateTimer, 1000);
+       
     }
-
+  
     updateTimer();
+    
 }
