@@ -37,8 +37,9 @@ if(time() > $endTime) {
 }
 
 
-
+// room id
 $roomId = 1;
+// question index
 $questionIndex = $_SESSION['questionIndex'] ?? 0;
 
 $stmt = $conn->prepare("SELECT * FROM questions WHERE roomId = :roomId");
