@@ -2,17 +2,7 @@
 session_start();
 include 'dbcon.php';
 
-if(!isset($_SESSION['start_time'])) {
 
-    // create a start time to compare to.
-    $_SESSION['start_time'] = time();
-
-    // set a duration in seconds
-    $_SESSION['duration'] = 300;
-
-
-
-}
 
 // endtime is being calculated by adding the duration to the start time. If it expires the user will be sent to lose.php
 
@@ -23,7 +13,6 @@ $endTime = $_SESSION['start_time'] + $_SESSION['duration'];
 
 // write timer to screen
 $timeleft = $endTime - time();
-echo $timeleft;
 // the comparision itself is done here.
 
 if(time() > $endTime) {
@@ -74,12 +63,16 @@ $currentQuestion = $questions[$questionIndex];
 <body style="background-color: black; color: white; text-align: center;">
     <h1>Room 2 - Vraag <?= $questionIndex + 1 ?></h1>
     <p><?= $currentQuestion['question'] ?></p>
+        <p id="timeRemaining" value="<?= $timeleft ?>"><?php echo $timeleft; ?></p>
+
 
     <form method="post">
         <input type="text" name="answer" required>
         <button type="submit">Beantwoord</button>
     </form>
 
-    <p><a href="room_1.php" style="color: lightblue;">Ga naar Kamer 1</a></p>
+   
+
+    <script src="./app.js"></script>
 </body>
 </html>
