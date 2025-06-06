@@ -113,21 +113,17 @@ if (currentWebpage.includes("room_1.php")) {
         }
     });
 
-    let hint = document.querySelector(".hint");
+   
+
+ let hint = document.querySelector(".hint");
     let hintText = null;
-
-    let box = document.getElementById("verhaal");
-    box.onclick = function () {
-        box.style.color = "black";
-
-    }
 
     hint.onclick = function () {
         if (!hintText) {
             hintText = document.createElement("p");
             hintText.id = "hintText";
             hintText.textContent = "Hoe selecteren we alle tekst in een document?.";
-            hintText.style.position = "dynamic";
+            hintText.style.position = "static";
             hintText.style.cursor = "pointer";
             hintText.style.color = "white";
             hintText.title = "Druk op Ctrl+A om alles te selecteren";
@@ -139,6 +135,11 @@ if (currentWebpage.includes("room_1.php")) {
     }
 
 }
+    let box = document.getElementById("verhaal");
+    box.onclick = function () {
+        box.style.color = "black";
+
+    }
 // function download image
 function newImage() {
     // create a(href)
