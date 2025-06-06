@@ -97,7 +97,7 @@ if (currentWebpage.includes("room_1.php")) {
                 napoleon.style.zIndex = "1";
                 // with js we will add the anwser when the image is clicked. this is done with appenchild.
                 anwserText = document.createElement("p");
-                anwserText.textContent= "1804";
+                anwserText.textContent = "1804";
                 anwserText.style.color = "black ";
                 document.body.appendChild(anwserText);
             } else {
@@ -107,9 +107,32 @@ if (currentWebpage.includes("room_1.php")) {
                 napoleon.style.width = "";
                 napoleon.style.height = "";
                 napoleon.style.zIndex = "";
-                napoleon.style.cursor= "not-allowed";
+                napoleon.style.cursor = "not-allowed";
             }
 
         }
     });
+
+    let hint = document.querySelector(".hint");
+    let hintText = null;
+
+
+    hint.onclick = function () {
+        if (!hintText) {
+            hintText = document.createElement("p");
+            hintText.id = "hintText";
+            hintText.textContent = "Hoe selecteren we alle tekst in een document?.";
+            hintText.style.position = "dynamic";
+            hintText.style.cursor = "pointer";
+            hintText.style.color = "white";
+            hintText.title = "Druk op Ctrl+A om alles te selecteren";
+            hint.appendChild(hintText);
+        } else {
+            hintText.remove();
+            hintText = null;
+        }
+    }
+
 }
+
+

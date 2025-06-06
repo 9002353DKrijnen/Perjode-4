@@ -4,29 +4,68 @@ $buttonBorderRadius : 15px;
 $border: 8px;
 $text-color : white;
 
-body{
+body {
     background-color: $standardBackground;
     color: $text-color;
     text-align: center;
     font-family: Arial, sans-serif;
 }
-main{
+
+main {
     display: flex;
     flex-direction: row;
-    gap: 10px;
+    gap: 5px;
+    max-width: 90%;
 }
+
 .imgNapoleonQ1 {
     max-width: 400px;
     border: 2px solid $borderColor;
     border-radius: $buttonBorderRadius;
-    margin: 20px auto;
+    margin: 10px auto;
     display: block;
-        img{
-            width: 100%;
-            height: 100%;
-            border-radius: $buttonBorderRadius;
-            &:hover{
-                cursor: pointer;
-            }
+
+    img {
+        width: 100%;
+        height: 100%;
+        border-radius: $buttonBorderRadius;
+
+        &:hover {
+            cursor: pointer;
         }
+    }
+}
+
+.explainer {
+    width: 250px;
+    height: 200px;
+    background: #222;
+    padding: 15px;
+    border-radius: $buttonBorderRadius;
+    border: 2px solid $borderColor;
+
+    p {
+
+        line-height: 1.2;
+        font-size: 18px;
+
+    }
+}
+
+.hint {
+    display: block;
+    font-weight: bold;
+    border: 2px solid $borderColor;
+    width: 17%;
+    height: 10%;
+    border-radius: $buttonBorderRadius;
+
+    p {
+        font-size: normal;
+
+        &:hover {
+            cursor: help;
+        }
+    }
+
 }

@@ -99,7 +99,7 @@ $currentQuestion = $questions[$questionIndex];
                 </section>
 
                 <section class="hint">
-                    <p>Hint: De naam van de wijnstreek is "La Pommerie".</p>
+                    <p>Hint</p>
                 </section>
             </main>
 

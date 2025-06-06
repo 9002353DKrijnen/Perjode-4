@@ -8,14 +8,15 @@ body {
 main {
   display: flex;
   flex-direction: row;
-  gap: 10px;
+  gap: 5px;
+  max-width: 90%;
 }
 
 .imgNapoleonQ1 {
   max-width: 400px;
   border: 2px solid white;
   border-radius: 15px;
-  margin: 20px auto;
+  margin: 10px auto;
   display: block;
 }
 .imgNapoleonQ1 img {
@@ -25,6 +26,34 @@ main {
 }
 .imgNapoleonQ1 img:hover {
   cursor: pointer;
+}
+
+.explainer {
+  width: 250px;
+  height: 200px;
+  background: #222;
+  padding: 15px;
+  border-radius: 15px;
+  border: 2px solid white;
+}
+.explainer p {
+  line-height: 1.2;
+  font-size: 18px;
+}
+
+.hint {
+  display: block;
+  font-weight: bold;
+  border: 2px solid white;
+  width: 17%;
+  height: 10%;
+  border-radius: 15px;
+}
+.hint p {
+  font-size: normal;
+}
+.hint p:hover {
+  cursor: help;
 }
 
 body {
