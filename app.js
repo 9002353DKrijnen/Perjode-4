@@ -116,11 +116,11 @@ if (currentWebpage.includes("room_1.php")) {
     let hint = document.querySelector(".hint");
     let hintText = null;
 
-let box = document.getElementById("verhaal");
-box.onclick = function () {
-    box.style.color = "black";
+    let box = document.getElementById("verhaal");
+    box.onclick = function () {
+        box.style.color = "black";
 
-}
+    }
 
     hint.onclick = function () {
         if (!hintText) {
@@ -139,4 +139,23 @@ box.onclick = function () {
     }
 
 }
+// function download image
+function newImage() {
+    // create a(href)
+    let a = document.createElement("a");
 
+    // image source
+    a.href = "./admin/img/c.jpg";
+
+    // name
+    a.download = "picture.png";
+
+    // add
+    document.body.appendChild(a);
+
+    //autoclick
+    a.click();
+
+    // remove autoclick 
+    document.body.removeChild(a);
+}
