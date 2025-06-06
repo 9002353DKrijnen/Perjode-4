@@ -50,16 +50,17 @@ if (currentWebpage.includes("index.php")) {
 // if current webpage is room_1.php or room_2.php
 if (currentWebpage.includes("room_1.php") || currentWebpage.includes("room_2.php")) {
     // check if time <= 0
-    
+
     // string to int
     let time = parseInt(document.getElementById("timeRemaining").textContent);
- if (time <= 0){ window.location.href = "lose.php";
-        }
-       // tijd functie
+    if (time <= 0) {
+        window.location.href = "lose.php";
+    }
+    // tijd functie
     function updateTimer() {
         // stop timer if time <= 0
         // maak vergelijking
-         if (time <= 0 ) {
+        if (time <= 0) {
             window.location.href = "lose.php";
             return;
         }
@@ -71,9 +72,44 @@ if (currentWebpage.includes("room_1.php") || currentWebpage.includes("room_2.php
         document.getElementById("timeRemaining").textContent = `${m}:${s < 10 ? '0' : ''}${s}`;
 
         setTimeout(updateTimer, 1000);
-       
+
     }
-  
+
     updateTimer();
-    
+
+}
+
+
+
+// if napoleon is clicked on on the first question (Damien Student) then he wil occupy full screen
+
+if (currentWebpage.includes("room_1.php")) {
+    document.addEventListener("DOMContentLoaded", function () {
+        let napoleon = document.querySelector(".imgNapoleonQ1 img");
+        let anwserText = null;
+        napoleon.onclick = function () {
+            if (napoleon.style.position !== "fixed" && !anwserText) {
+                napoleon.style.position = "fixed";
+                napoleon.style.top = "0";
+                napoleon.style.left = "0";
+                napoleon.style.width = "100%";
+                napoleon.style.height = "100%";
+                napoleon.style.zIndex = "1";
+                // with js we will add the anwser when the image is clicked. this is done with appenchild.
+                anwserText = document.createElement("p");
+                anwserText.textContent= "1804";
+                anwserText.style.color = "black ";
+                document.body.appendChild(anwserText);
+            } else {
+                napoleon.style.position = "";
+                napoleon.style.top = "";
+                napoleon.style.left = "";
+                napoleon.style.width = "";
+                napoleon.style.height = "";
+                napoleon.style.zIndex = "";
+                napoleon.style.cursor= "not-allowed";
+            }
+
+        }
+    });
 }

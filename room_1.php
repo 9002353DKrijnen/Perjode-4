@@ -74,16 +74,35 @@ $currentQuestion = $questions[$questionIndex];
 
 <head>
     <meta charset="UTF-8">
-    <title>Escape Room 1</title>
+    <title>Napoleon's Code</title>
+    <link rel="stylesheet" href="style.css">
 </head>
 
-<body style="background-color: black; color: white; text-align: center;">
+<body data-question="<?= $questionIndex ?>">
+
+
     <?php
     switch ($questionIndex) {
         case 0: ?>
             <h1>Room 1 - Vraag <?= $questionIndex + 1 ?></h1>
             <p><?= $currentQuestion['question'] ?></p>
             <p id="timeRemaining" value="<?= $timeleft ?>"><?php echo $timeleft; ?></p>
+
+            <main>
+                <section class="explainer">
+                    <h2>Uitleg</h2>
+                    <p>Als op de afbeelding klikt komt er een geheim te voorschijn</p>
+                </section>
+
+                <section class="imgNapoleonQ1">
+                    <img  src="./admin/img/FS6A9470-Chateau-de-la-Pommerie-_-Musee-Napoleon@DeclicDecolle-min-e1684331137953.jpg" alt="napoleonPuzzle">
+                </section>
+
+                <section class="hint">
+                    <p>Hint: De naam van de wijnstreek is "La Pommerie".</p>
+                </section>
+            </main>
+
             <form method="post">
                 <input type="text" name="answer" required>
                 <button type="submit">Beantwoord</button>
@@ -96,6 +115,7 @@ $currentQuestion = $questions[$questionIndex];
             <p id="timeRemaining" value="<?= $timeleft ?>"><?php echo $timeleft; ?></p>
             <form method="post">
                 <input type="text" name="answer" required>
+
                 <button type="submit">Beantwoord</button>
             </form>
         <?php
