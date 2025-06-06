@@ -16,7 +16,7 @@
 
     <h1 id="titleIndex">Code Napoleon</h1>
 
-    <div class="buttons">
+    <section class="buttons">
       <!-- a button for with an id so we can easily use it for javascript's onclick -->
       <section class="button" id="storyBox">
         <p>Verhaal</p>
@@ -31,13 +31,13 @@
       <section class="button">
         <p>Scores</p>
       </section>
-    </div>
+    </section>
 
 
 
-    <div id="imgIndex">
+    <section id="imgIndex">
       <img src="./admin/img/370966_poster.jpg" alt="Napoleon">
-    </div>
+    </section>
 
 
   </main>

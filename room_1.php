@@ -113,6 +113,26 @@ $currentQuestion = $questions[$questionIndex];
             <h1>Room 1 - Vraag <?= $questionIndex + 1 ?></h1>
             <p><?= $currentQuestion['question'] ?></p>
             <p id="timeRemaining" value="<?= $timeleft ?>"><?php echo $timeleft; ?></p>
+     <main class="parent">
+    <div class="div1">In Frankrijk is het bij de wet verboden je varken Napoleon te noemen.
+</div>
+    <div class="div2">Een wijdverspreid misverstand over Napoleon Bonaparte, is dat hij een klein mannetje was. Dit beeld heeft onder andere bijgedragen aan het
+begrip Napoleon-complex. In werkelijkheid was Napoleon 1,67 lang, dit was de gemiddelde lengte voor mensen uit de vroege 19e eeuw.</div>
+    <div class="div3">Napoleon wilde niet door iemand anders als Keizer gekroond worden, daarom heeft hij zichzelf tot Keizer gekroond.</div>
+    <div class="div4"> Code Napoleon:
+Hij heeft belangrijke wetten en regels ingevoerd die bekend staan als de "Code Napoleon". </div>
+    <div class="div5">De veldslag waarbij Napoleon in 1815 definitief verslagen werd, is de Slag bij Waterloo.</div>
+    <div class="div6">Jacques-Louis David:
+David schilderde diverse belangrijke werken met Napoleon als onderwerp, waaronder "Napoleon steekt de Alpen over" en "De kroning van Napoleon", die nu in het Louvre in Parijs te zien zijn.</div>
+    <div class="div7">Andere kunstenaars:
+Er zijn tal van andere schilderijen en portretten van Napoleon, gemaakt door verschillende artiesten, zoals Jean-Auguste-Dominique Ingres, die ook portretten van de keizer en zijn familie schilderde.</div>
+    <div class="div8">De 33-jarige Jean-Christophe Napoleon Bonaparte woont in Londen en is de achter-achter-achterneef van Napoleon Bonaparte I, keizer van Frankrijk van 1804 tot 1814.</div>
+    <div class="div9">De Dôme des Invalides bevat het graf van Napoleon I en is een monument dat je niet mag missen tijdens het verkennen van het Parijse landschap tijdens wandeltochten door Parijs.</div>
+        </main>
+    
+
+
+
             <form method="post">
                 <input type="text" name="answer" required>
 
