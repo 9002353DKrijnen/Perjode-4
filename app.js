@@ -116,6 +116,11 @@ if (currentWebpage.includes("room_1.php")) {
     let hint = document.querySelector(".hint");
     let hintText = null;
 
+let box = document.getElementById("verhaal");
+box.onclick = function () {
+    box.style.color = "black";
+
+}
 
     hint.onclick = function () {
         if (!hintText) {
@@ -134,5 +139,4 @@ if (currentWebpage.includes("room_1.php")) {
     }
 
 }
-
 

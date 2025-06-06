@@ -121,7 +121,8 @@ begrip Napoleon-complex. In werkelijkheid was Napoleon 1,67 lang, dit was de gem
     <div class="div3">Napoleon wilde niet door iemand anders als Keizer gekroond worden, daarom heeft hij zichzelf tot Keizer gekroond.</div>
     <div class="div4"> Code Napoleon:
 Hij heeft belangrijke wetten en regels ingevoerd die bekend staan als de "Code Napoleon". </div>
-    <div class="div5">De veldslag waarbij Napoleon in 1815 definitief verslagen werd, is de Slag bij Waterloo.</div>
+    <div class="div5" >De veldslag waarbij Napoleon  definitief verslagen werd is de <p id="verhaal">Slag bij Waterloo</p>
+    </div>
     <div class="div6">Jacques-Louis David:
 David schilderde diverse belangrijke werken met Napoleon als onderwerp, waaronder "Napoleon steekt de Alpen over" en "De kroning van Napoleon", die nu in het Louvre in Parijs te zien zijn.</div>
     <div class="div7">Andere kunstenaars:
