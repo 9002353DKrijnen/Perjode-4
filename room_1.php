@@ -78,14 +78,40 @@ $currentQuestion = $questions[$questionIndex];
 </head>
 
 <body style="background-color: black; color: white; text-align: center;">
-    <h1>Room 1 - Vraag <?= $questionIndex + 1 ?></h1>
-    <p><?= $currentQuestion['question'] ?></p>
-    <p id="timeRemaining" value="<?= $timeleft ?>"><?php echo $timeleft; ?></p>
-    <form method="post">
-        <input type="text" name="answer" required>
-        <button type="submit">Beantwoord</button>
-    </form>
-
+    <?php
+    switch ($questionIndex) {
+        case 0: ?>
+            <h1>Room 1 - Vraag <?= $questionIndex + 1 ?></h1>
+            <p><?= $currentQuestion['question'] ?></p>
+            <p id="timeRemaining" value="<?= $timeleft ?>"><?php echo $timeleft; ?></p>
+            <form method="post">
+                <input type="text" name="answer" required>
+                <button type="submit">Beantwoord</button>
+            </form>
+        <?php
+            break;
+        case 1: ?>
+            <h1>Room 1 - Vraag <?= $questionIndex + 1 ?></h1>
+            <p><?= $currentQuestion['question'] ?></p>
+            <p id="timeRemaining" value="<?= $timeleft ?>"><?php echo $timeleft; ?></p>
+            <form method="post">
+                <input type="text" name="answer" required>
+                <button type="submit">Beantwoord</button>
+            </form>
+        <?php
+            break;
+        case 2: ?>
+            <h1>Room 1 - Vraag <?= $questionIndex + 1 ?></h1>
+            <p><?= $currentQuestion['question'] ?></p>
+            <p id="timeRemaining" value="<?= $timeleft ?>"><?php echo $timeleft; ?></p>
+            <form method="post">
+                <input type="text" name="answer" required>
+                <button type="submit">Beantwoord</button>
+            </form>
+    <?php
+            break;
+    }
+    ?>
 
     <script src="./app.js"></script>
 </body>

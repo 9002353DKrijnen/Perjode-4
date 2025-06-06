@@ -3,6 +3,11 @@ $borderColor : white;
 $buttonBorderRadius : 15px;
 $border: 8px;
 $text-color : white;
+// import questions 1 - 3 so we don't have to create 3 other pages. 
+@import 'question1';
+@import 'question2';
+@import 'question3';
+
 
 
 body {
