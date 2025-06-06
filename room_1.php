@@ -74,60 +74,46 @@ $currentQuestion = $questions[$questionIndex];
 
 <head>
     <meta charset="UTF-8">
-    <title>Code Napoleon</title>
+    <title>Escape Room 1</title>
 </head>
 
-<body style="background-color: black; color: white; text-align: center;" data-question="<?= $questionIndex + 1 ?>">
-<?php
-// Voorzichtige switch voor verschillende HTML per vraag
-switch ($questionIndex) {
-    case 0:
-        ?>
-        <h1>Vraag 1</h1>
-        <p><?= htmlspecialchars($currentQuestion['question']) ?></p>
-        <form method="post">
-            <input type="text" name="answer" required>
-            <button type="submit">Beantwoord</button>
-                <p id="timeRemaining" value="<?= $timeleft ?>"><?php echo $timeleft; ?></p>
-
-        </form>
-        <?php
-        break;
-
-    case 1:
-        ?>
-        <h2>Vraag 2 - iets andere layout</h2>
-        <div class="question-wrapper">
-            <p><strong><?= htmlspecialchars($currentQuestion['question']) ?></strong></p>
+<body style="background-color: black; color: white; text-align: center;">
+    <?php
+    switch ($questionIndex) {
+        case 0: ?>
+            <h1>Room 1 - Vraag <?= $questionIndex + 1 ?></h1>
+            <p><?= $currentQuestion['question'] ?></p>
+            <p id="timeRemaining" value="<?= $timeleft ?>"><?php echo $timeleft; ?></p>
             <form method="post">
-                <textarea name="answer" required></textarea>
-                <button type="submit">Antwoord verzenden</button>
+                <input type="text" name="answer" required>
+                <button type="submit">Beantwoord</button>
             </form>
-                <p id="timeRemaining" value="<?= $timeleft ?>"><?php echo $timeleft; ?></p>
-
-        </div>
         <?php
-        break;
-
-    case 2:
-        ?>
-        <section class="last-question">
-            <h3>Laatste vraag</h3>
-            <p><?= htmlspecialchars($currentQuestion['question']) ?></p>
+            break;
+        case 1: ?>
+            <h1>Room 1 - Vraag <?= $questionIndex + 1 ?></h1>
+            <p><?= $currentQuestion['question'] ?></p>
+            <p id="timeRemaining" value="<?= $timeleft ?>"><?php echo $timeleft; ?></p>
             <form method="post">
-                <input type="text" name="answer" required autocomplete="off">
-                <button type="submit">Check</button>
+                <input type="text" name="answer" required>
+                <button type="submit">Beantwoord</button>
             </form>
-                <p id="timeRemaining" value="<?= $timeleft ?>"><?php echo $timeleft; ?></p>
-
-        </section>
         <?php
-        break;
+            break;
+        case 2: ?>
+            <h1>Room 1 - Vraag <?= $questionIndex + 1 ?></h1>
+            <p><?= $currentQuestion['question'] ?></p>
+            <p id="timeRemaining" value="<?= $timeleft ?>"><?php echo $timeleft; ?></p>
+            <form method="post">
+                <input type="text" name="answer" required>
+                <button type="submit">Beantwoord</button>
+            </form>
+    <?php
+            break;
+    }
+    ?>
 
-    default:
-        ?>
-        <p>Onbekende vraag.</p>
-        <?php
-        break;
-}
-?>
+    <script src="./app.js"></script>
+</body>
+
+</html>
