@@ -1,8 +1,12 @@
 <?php
 session_start();
+if (!isset($_SESSION["user_id"])) {
+    header("Location: user/login.php");
+    exit;
+}
 include 'dbcon.php';
-// let a timer play for 500 seconds
-// session start 
+
+
 
 
 // if there's not an active session at this time there will be one made.

@@ -1,6 +1,12 @@
 <?php
 session_start();
+if (!isset($_SESSION["user_id"])) {
+    header("Location: user/login.php");
+    exit;
+}
 include 'dbcon.php';
+
+
 
 // Timer instellen
 if (!isset($_SESSION['start_time'])) {

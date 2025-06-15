@@ -2,7 +2,7 @@
 
 
 
-        // Timer functionality - verbeterde versie
+        // Timer functionality - verbeterde versie 
         function updateTimer() {
             const timerElement = document.getElementById('timeRemaining');
             let timeLeft = parseInt(timerElement.getAttribute('value'));
