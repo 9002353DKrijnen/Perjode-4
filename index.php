@@ -89,6 +89,7 @@ if ($_SERVER["REQUEST_METHOD"] === "POST") {
       <p style="margin-top: 20px;">
         Nog geen account? <a href="#" onclick="toggleForms(); return false;">Registreer hier</a>
       </p>
+    <a href="./admin/admin.php">Klik hier als u admin bent</a>
     </div>
 
     <!-- Registratie formulier -->
