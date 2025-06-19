@@ -1,5 +1,9 @@
 <?php
+
+// start session 
 session_start();
+
+// check if user is logged in if not send to login page
 if (!isset($_SESSION["user_id"])) {
     header("Location: user/login.php");
     exit;
@@ -39,13 +43,15 @@ if (time() > $endTime) {
 
 // room id
 $roomId = 1;
+
+
 // question index
 $questionIndex = $_SESSION['questionIndex'] ?? 0;
 
 $stmt = $conn->prepare("SELECT * FROM questions WHERE roomId = :roomId");
 $stmt->execute(['roomId' => $roomId]);
 $questions = $stmt->fetchAll(PDO::FETCH_ASSOC);
-
+// if no questions are found for this room stop the game
 if (count($questions) === 0) {
     echo "Geen vragen gevonden voor deze kamer.";
     exit;
@@ -69,7 +75,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
         echo "<p style='color:red;'>Fout antwoord. Hint: $hint</p>";
     }
 }
-
+// for each question there is a different number assigned. We will use this number to show the correct question, and to adaptivly show HTML.
 $currentQuestion = $questions[$questionIndex];
 ?>
 
@@ -81,14 +87,20 @@ $currentQuestion = $questions[$questionIndex];
     <title>Napoleon's Code</title>
     <link rel="stylesheet" href="style.css">
 </head>
+<!-- Set the data-question attribute to the current question index -->
 
 <body data-question="<?= $questionIndex ?>">
 
 
     <?php
+
+    // switch statement to show the correct question
     switch ($questionIndex) {
         case 0: ?>
+        <!-- add +1 to each new passed question -->
             <h1>Room 1 - Vraag <?= $questionIndex + 1 ?></h1>
+
+            <!-- show the (current) question -->
             <p><?= $currentQuestion['question'] ?></p>
             <p id="timeRemaining" value="<?= $timeleft ?>"><?php echo $timeleft; ?></p>
 
