@@ -8,6 +8,7 @@ if (!isset($_SESSION["user_id"])) {
     header("Location: user/login.php");
     exit;
 }
+// include database.php 
 include 'dbcon.php';
 
 
@@ -35,6 +36,8 @@ $endTime = $_SESSION['start_time'] + $_SESSION['duration'];
 $timeleft = $endTime - time();
 // the comparision itself is done here.
 
+
+// if time exceeds the end time the user will be sent to lose.php
 if (time() > $endTime) {
     header("Location: lose.php");
     exit;
@@ -60,11 +63,11 @@ if (count($questions) === 0) {
 if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     $userAnswer = trim(strtolower($_POST['answer']));
     $correctAnswer = strtolower($questions[$questionIndex]['answer']);
-
+// if correct anwser is given the question index will be increased, thus a new question will appear.
     if ($userAnswer === $correctAnswer) {
         $questionIndex++;
         $_SESSION['questionIndex'] = $questionIndex;
-
+// if questionInd
         if ($questionIndex >= count($questions)) {
             $_SESSION['questionIndex'] = 0;
             header("Location: room_2.php");
@@ -178,7 +181,7 @@ $currentQuestion = $questions[$questionIndex];
             break;
     }
     ?>
-
+<!-- script source is added at the bottom, end of body -->
     <script src="./app.js"></script>
 </body>
 

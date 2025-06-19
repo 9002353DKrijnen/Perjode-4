@@ -11,13 +11,19 @@ if ($_SERVER["REQUEST_METHOD"] === "POST") {
         $username = trim($_POST["username"]);
         $password = $_POST["password"];
 
-        $stmt = $conn->prepare("SELECT id, username, password FROM users WHERE username = :username");
+        $stmt = $conn->prepare("SELECT id, username, password, is_admin FROM users WHERE username = :username");
         $stmt->execute(['username' => $username]);
         $user = $stmt->fetch(PDO::FETCH_ASSOC);
 
         if ($user && password_verify($password, $user["password"])) {
             $_SESSION["user_id"] = $user["id"];
             $_SESSION["username"] = $user["username"];
+            $_SESSION["is_admin"] = $user["is_admin"];
+            $isAdmin = $user["is_admin"];
+            $isAdmin = false;
+            if($user["is_admin"] === 1){
+                $_SESSION["is_admin"] = true;
+            }
             header("Location: index.php");
             exit;
         } else {
@@ -89,7 +95,14 @@ if ($_SERVER["REQUEST_METHOD"] === "POST") {
       <p style="margin-top: 20px;">
         Nog geen account? <a href="#" onclick="toggleForms(); return false;">Registreer hier</a>
       </p>
-    <a href="./admin/admin.php">Klik hier als u admin bent</a>
+   <?= if 
+   
+   
+   
+   
+   
+   
+   ?>
     </div>
 
     <!-- Registratie formulier -->
