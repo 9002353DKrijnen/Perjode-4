@@ -59,7 +59,7 @@ if (currentWebpage.includes("room_1.php") || currentWebpage.includes("room_2.php
     // tijd functie
     function updateTimer() {
         // stop timer if time <= 0
-        // maak vergelijking
+        // make comparison
         if (time <= 0) {
             window.location.href = "lose.php";
             return;
