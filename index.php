@@ -16,16 +16,15 @@ if ($_SERVER["REQUEST_METHOD"] === "POST") {
         $user = $stmt->fetch(PDO::FETCH_ASSOC);
 
         if ($user && password_verify($password, $user["password"])) {
-            $_SESSION["user_id"] = $user["id"];
-            $_SESSION["username"] = $user["username"];
-            $_SESSION["is_admin"] = $user["is_admin"];
-            $isAdmin = $user["is_admin"];
-            $isAdmin = false;
-            if($user["is_admin"] === 1){
-                $_SESSION["is_admin"] = true;
-            }
-            header("Location: index.php");
-            exit;
+       if ($user && password_verify($password, $user["password"])) {
+    $_SESSION["user_id"] = $user["id"];
+    $_SESSION["username"] = $user["username"];
+    
+    // geeft true of false
+    $_SESSION["is_admin"] = ($user["is_admin"] == 1); 
+    header("Location: index.php");
+    exit;
+}
         } else {
             $loginError = "Ongeldige gebruikersnaam of wachtwoord!";
         }
