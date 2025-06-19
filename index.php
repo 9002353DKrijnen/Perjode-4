@@ -169,8 +169,6 @@ if ($_SERVER["REQUEST_METHOD"] === "POST") {
       <!-- Knop voor het verhaal -->
       <section class="button" id="storyBox" style="cursor:pointer;">
         <p>Verhaal</p>
-        <?= var_dump($_SESSION["is_admin"])
-        var_dump($_SESSION["username"]) ?>
       </section>
 
       <!-- Startknop voor het spel -->
