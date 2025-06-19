@@ -1,5 +1,3 @@
-// grid is used so we get a nice layout of 3x3
-
 .parent {
   display: grid;
   grid-template-columns: repeat(3, 1fr);
