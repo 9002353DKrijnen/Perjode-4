@@ -39,7 +39,7 @@
             echo "<select name='user_1'>";
             foreach ($result as $user) {
                 // instead of string concatenation we use string interpolation, because I find it much easier to read. 
-                echo "<option value='{$user['id']}'>{$user['username']} </option>";
+                echo "<option value='{$user['username']}'>{$user['username']} </option>";
             }
             echo "</select>";
 
@@ -47,7 +47,7 @@
             echo "<select name='user_2'>";
             foreach ($result as $user) {
                 // instead of string concatenation we use string interpolation, because I find it much easier to read. 
-                echo "<option value='{$user['id']}'>{$user['username']} </option>";
+                echo "<option value='{$user['username']}'>{$user['username']} </option>";
             }
             echo "</select>";
 
@@ -79,7 +79,9 @@
                height: 40%;
                top: 0;
                left: 0;
-
+            p{
+                color: white;
+            }
            }
        </style>
 
@@ -120,7 +122,7 @@
 
         // declare user_1 and user_2 as an array
 
-        $user = array($user1, $user2);
+        $user = [$user1, $user2];
 
         //Gain latest team ID
         $sqlQuery = "SELECT MAX(TeamID) as teamID FROM teams";
