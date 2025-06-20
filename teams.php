@@ -16,11 +16,10 @@
     }
     // get database connection
     include 'dbcon.php';
-// sqlQuery
+    // sqlQuery
     $sqlQuery = "
-    SELECT teamnaam, GROUP_CONCAT(username ORDER BY id SEPARATOR ' - ') AS spelers FROM teams GROUP BY TeamID, teamnaam
-";
-// prepare statement
+    SELECT teamnaam, GROUP_CONCAT(username ORDER BY id SEPARATOR ' - ') AS spelers FROM teams GROUP BY TeamID, teamnaam";
+    // prepare statement
     $statement = $conn->prepare($sqlQuery);
 
     // run the query
@@ -43,11 +42,14 @@
         echo "<td>" . htmlspecialchars($team['spelers']) . "</td>";
         echo "</tr>";
     }
+
+    // end table
     echo "</table>";
 
 
 
     ?>
+    <!-- button to make teams -->
     <a href="./user/add_team.php">
         <p>Maak teams</p>
     </a>
