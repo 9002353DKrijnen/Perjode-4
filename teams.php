@@ -26,16 +26,34 @@
 
     // fetch results
     $result = $statement->fetchAll(PDO::FETCH_ASSOC);
-echo "<table border='1' bordercolor='white'>";
-    foreach ($result as $team) {
-        echo "<p>" . $team['teamnaam'] . "</p>" . "<br>";
-        foreach ($team as $player => $value) {
-            echo "<p>" . htmlspecialchars($value) . "</p>" . "<br>";
-        }
-    }
-    ?>
+    echo "<table border='1' callpadding='10' cellspacing='0' id='table'>";
+    echo "<tr><th>teamnaam</th><th>Speler 1</th><th>Speler 2</th></tr>";
+        foreach($result as $team) {
+            echo "<tr> ";
+            echo "<td>" . $team['teamnaam'] . "</td>";
+            foreach($team as $key => $value) {
+               echo "<td>" . $team['username'] . "</td>";
 
-    <!-- make teams if needed -->
+            }
+            echo "</tr>";
+            
+        }
+
+
+
+    ?>
+    <style>
+        #table{
+    width: 100%;
+    border-collapse: collapse;
+    margin: 0 auto;
+    border: 1px solid #000;
+     *{
+        color: white;
+     }
+}
+
+        </style>
     <a href="./user/add_team.php">
         <p>Maak teams</p>
     </a>
