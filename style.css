@@ -109,6 +109,16 @@ div:hover {
 }
 
 body {
+  background-color: black;
+  color: black;
+  text-align: center;
+}
+
+p {
+  color: white;
+}
+
+body {
   font-family: Arial, sans-serif;
   text-align: center;
   background-color: black;
