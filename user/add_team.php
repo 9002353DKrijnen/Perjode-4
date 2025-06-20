@@ -104,7 +104,7 @@
                     break;
                 // if user 1 is equal to user 2, show error
                 case $user1 === $user2:
-                    $error = "Gebruikers mogen niet gelijk zijn.";
+                    $error = "Gebruikers mogen niet  hetzelfde zijn.";
                     break;
                 default:
                     // null if there's no error at all. 
