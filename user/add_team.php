@@ -124,7 +124,7 @@
 
         $user = [$user1, $user2];
 
-        //Gain latest team ID
+        //Gain latest team ID and add + 1
         $sqlQuery = "SELECT MAX(TeamID) as teamID FROM teams";
         $statement = $conn->prepare($sqlQuery);
         $statement->execute();
@@ -145,7 +145,9 @@
 
         ?>
 
-
+<a href="./admin/edit_teams.php">
+    <p>Bewerk teams</p>
+</a>
 
    </body>
 
