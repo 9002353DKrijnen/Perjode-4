@@ -35,7 +35,7 @@ We will begin by creating an sql command. But we will first make a regular html 
     <?php
 
     // sqlQuery
-    $sqlQuery = "SELECT teamnaam, GROUP_CONCAT(username ORDER BY id SEPARATOR ' - ')
+    $sqlQuery = "SELECT teamnaam, TeamID, GROUP_CONCAT(username ORDER BY id SEPARATOR ' - ')
      AS spelers FROM teams GROUP BY TeamID, teamnaam";
     // prepare statement
     $statement = $conn->prepare($sqlQuery);
@@ -55,6 +55,8 @@ We will begin by creating an sql command. But we will first make a regular html 
         echo "<tr>";
         echo "<td>{$team['teamnaam']} </td>";
         echo "<td>- {$team['spelers']}</td>";
+        echo "<td><a href='edit_team.php?team_id={$team['TeamID']}'>Bewerken</a></td>";
+        echo "<td><a href='delete_team.php?team_id={$team['TeamID']}'>Verwijderen</a></td>";
         echo "</tr>";
     }
 
