@@ -37,7 +37,7 @@ if (!isset($_SESSION['admin_logged_in'])) {
     <div class="menu">
         <a href="index.php">Vragen Overzicht</a>
         <a href="add_question.php">Vraag Toevoegen</a>
-        <a href="edit_teams.php">Teams bewerken</a>
+        <a href="edit_team.php">Teams bewerken</a>
     </div>
 
     <h2>Vragen Lijst</h2>
