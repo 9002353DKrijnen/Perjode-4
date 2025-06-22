@@ -178,19 +178,24 @@ if ($_SERVER["REQUEST_METHOD"] === "POST") {
         </a>
       </section>
 
-      <!-- (Nog lege) knop voor scores -->
+      <!-- Knop voor scoreboard -->
       <section class="button">
-        <p>Scores</p>
+        <a href="user/score.php" style="text-decoration:none; color:inherit;">
+          <p>Scores</p>
+        </a>
+      </section>
+
+      <section class="button">
+        <a href="admin/logout.php" style="color: white; text-decoration: none;">
+          Uitloggen
+        </a>
       </section>
     </section>
-
+    
     <!-- Afbeelding -->
     <section id="imgIndex">
       <img src="./admin/img/370966_poster.jpg" alt="Napoleon" />
     </section>
-
-    <!-- Link om uit te loggen -->
-    <p style="text-align:center; margin-top:20px;"><a href="logout.php">Uitloggen</a></p>
   </main>
 
   <!-- Koppel externe JavaScript-bestand -->
