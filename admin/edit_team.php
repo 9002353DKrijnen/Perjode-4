@@ -10,7 +10,7 @@ if(PHP_SESSION_NONE == session_status()) {
 
 
 // if the username does not have the function is Admin then it will be redirected to the home page
-if(!isset($_SESSION['is_admin']) || $_SESSION['is_admin'] === false) {
+if(!isset($_SESSION['admin_logged_in']) || $_SESSION['admin_logged_in'] === false) {
     header("Location: ../index.php");
     exit;
 }
