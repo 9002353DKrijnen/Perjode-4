@@ -52,10 +52,10 @@ We will begin by creating an sql command. But we will first make a regular html 
 
     // table with teams
 
-    echo "<table>";
+    echo "<table id='table_editteams'>";
 
     // table header with basic design
-    echo "<thead><tr><th>Teamnaam</th><th>Spelers</th></tr></thead>";
+    echo "<thead><tr><th>Teamnaam</th><th>Spelers</th> <th>Bewerken</th><th>Verwijderen</th></tr></thead>";
 
     // forach with teamname and players from database
     foreach ($result as $team) {
@@ -68,7 +68,7 @@ We will begin by creating an sql command. But we will first make a regular html 
         echo "<td><a href='delete_team.php?team_id={$team['TeamID']}'>Verwijderen</a></td>";
         echo "</tr>";
     }
-echo "</table>";
+    echo "</table>";
     ?>
 </body>
 

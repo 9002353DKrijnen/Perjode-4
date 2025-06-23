@@ -45,16 +45,16 @@ div {
   height: 300px;
   background-color: rgba(173, 173, 173, 0.623);
   border: 2px solid white;
-  border-radius: $buttonBorderRadius;	
+  border-radius: $buttonBorderRadius;
   margin: 10px auto;
   display: block;
   text-align: center;
   font-size: 15px;
   padding: 10px;
-    &:hover {
-        transform: scale(1.1);
-        transition: all 0.3s ease-in-out;   
+  transition: transform 0.3s ease-in-out;
 
-    }
+  &:hover {
+    transform: scale(1.1);
+
+  }
 }
-
