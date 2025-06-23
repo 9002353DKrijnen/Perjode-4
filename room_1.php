@@ -152,7 +152,7 @@ $currentQuestion = $questions[$questionIndex];
 
             <section>
                 <h1>Napoleon's Geboorteland</h1>
-                <p>Vindt Napoleon's Geboorteland! </p>
+                <p>Vindt Napoleon's Geboorteland! Klik op de afbeelding</p>
             </section>
 
             <section>
