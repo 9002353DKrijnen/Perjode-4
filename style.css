@@ -141,12 +141,28 @@ div:hover {
   border: 1px solid #000;
   border-radius: 15px;
   display: inline-block;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.3);
+}
+#editTeams table th {
+  padding: 10px;
+  text-align: center;
+  border: 1px solid #000;
+}
+#editTeams table thead {
+  background-color: black;
+  color: white;
 }
 #editTeams table tr,
 #editTeams table td {
   border: 1px solid #000;
   padding: 10px;
   text-align: center;
+}
+#editTeams table td {
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.3);
+}
+#editTeams table td:hover {
+  box-shadow: 0 0 20px rgba(0, 0, 0, 0.5);
 }
 #editTeams table a {
   background-color: blue;

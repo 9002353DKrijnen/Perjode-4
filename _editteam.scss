@@ -18,9 +18,17 @@
         border: 1px solid #000;
         border-radius: $buttonBorderRadius;
         display: inline-block;
+        box-shadow: 0 0 10px rgba(0, 0, 0, 0.3);
+
+        th {
+            padding: 10px;
+            text-align: center;
+            border: 1px solid #000;
+        }
 
         thead{
-            
+            background-color: black;
+            color: white;
         }
 
         tr,
@@ -28,6 +36,13 @@
             border: 1px solid #000;
             padding: 10px;
             text-align: center;
+        }
+
+        td{
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.3);
+                &:hover {
+                    box-shadow: 0 0 20px rgba(0, 0, 0, 0.5);
+                }
         }
 
         a {
