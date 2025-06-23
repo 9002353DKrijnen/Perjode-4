@@ -64,16 +64,16 @@ We will begin by creating an sql command. But we will first make a regular html 
         echo "<td>- {$team['spelers']}</td>";
 
         // edit and delete buttons
-        echo "<td><a href='#' class='post-link' data-action='edit_team_admin.php' data-id='{$team['TeamID']}'>Bewerken</a></td>";
+        echo "<td><a href='#' class='post-link' data-action='edit_team_admin.php' data-id='{$team['TeamID']}'data-usernames= '{$team['spelers']}'>Bewerken</a></td>";
         echo "<td><a href='#' class='post-link' data-action='delete_team.php' data-id='{$team['TeamID']}'>Verwijderen</a></td>";
-
         echo "</tr>";
     }
     echo "</table>";
     ?>
-    <!-- hidden form toe make it easier to handle the post request done by the edit_team.php page -->
+    <!-- hidden form to make it easier to handle the post request done by the edit_team.php page -->
     <form method="post" id="postForm" style="display: none">
         <input type="hidden" name="TeamID" id="hiddenTeamID">
+        <input type="hidden" name="spelers" id="hiddenUsernames">
     </form>
     <script>
         // if content is loaded load Eventlistener to the page
@@ -81,28 +81,35 @@ We will begin by creating an sql command. But we will first make a regular html 
             // import form and input
             const form = document.getElementById('postForm');
             const input = document.getElementById('hiddenTeamID');
+            const usernamesOutput = document.getElementById("hiddenUsernames");
 
             // for each link we want to prevent to load to a random place (#), we will use preventDefault to prevent that default action and instead let javascript handle the inputted value
 
-            document.querySelectorAll('.post-link').forEach(link =>{
-                link.addEventListener('click',function(event){
+            document.querySelectorAll('.post-link').forEach(link => {
+                link.addEventListener('click', function(event) {
                     // prevent default #
                     event.preventDefault();
 
                     // get the given 
                     const action = this.dataset.action;
                     const teamID = this.dataset.id;
-
+                    const usernames = this.dataset.usernames;
                     //prevent accidental deletion 
-                    if(action.includes('delete')){
+                    if (action.includes('delete')) {
                         const isConfirmed = confirm(`Weet u zeker dat u het team met teamid ${teamID} wilt verwijderen?`)
-                        if(!isConfirmed) return;
+                        if (!isConfirmed) return;
                     }
                     //input value is team id 
                     input.value = teamID;
+
+                    // username values
+
+                    usernamesOutput.value = usernames;
                     // delete or edit 
                     form.action = action;
-                    
+
+
+
                     // submit
                     form.submit();
                 })
