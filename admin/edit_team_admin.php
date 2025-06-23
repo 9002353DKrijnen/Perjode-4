@@ -33,10 +33,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST' && isset($_POST['update'])) {
         $stmtUpdate = $conn->prepare($sqlUpdate);
 
         foreach ($ids as $index => $id) {
-            // Check of username bestaat in users (extra check)
-            if (!in_array($usernames[$index], $allUsers, true)) {
-                die("Ongeldige username: " . htmlspecialchars($usernames[$index]));
-            }
+            // Check if username already exists
             $stmtUpdate->execute([
                 'username' => $usernames[$index],
                 'score' => $scores[$index],
