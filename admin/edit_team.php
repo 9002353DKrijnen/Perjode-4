@@ -32,7 +32,7 @@ We will begin by creating an sql command. But we will first make a regular html 
     <link rel="stylesheet" href="../style.css">
 </head>
 
-<body>
+<body id="editTeams">
     <?php
 
     // sqlQuery with group_concat that takes mulitple rows from username to a single row

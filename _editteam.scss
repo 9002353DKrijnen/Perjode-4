@@ -1,12 +1,30 @@
-body{
-    background: white;
-}
-
-table{
-    position: relative;
-    display: block;
-    margin: 0 auto;
-    border-collapse: collapse;
-    border: 1px solid black;
-    width: 50%;
+#editTeams{
+    background-color: white;
+    color: black;
+    p{
+        color: black;
+    }
+    table{
+        position: relative;
+        top: 0;
+        left: 0;
+        right: 0;
+        border-collapse: collapse;
+        width: max-content;
+        margin: 0 auto;
+        padding: 20px;
+        border: 1px solid #000;
+        border-radius: $buttonBorderRadius;
+       tr,td{
+        border: 1px solid #000;
+       }
+       a{
+        background-color: blue;
+        text-decoration: none;
+            &:hover{
+                    transition: transform 0.3s ease-in-out;
+                    transform: scale(1.1);
+            }
+       }
+    }
 }
