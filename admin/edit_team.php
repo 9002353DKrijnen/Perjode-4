@@ -64,7 +64,7 @@ We will begin by creating an sql command. But we will first make a regular html 
         echo "<td>- {$team['spelers']}</td>";
 
         // edit and delete buttons
-        echo "<td><a href='#' class='post-link' data-action='edit_team.php' data-id='{$team['TeamID']}'>Bewerken</a></td>";
+        echo "<td><a href='#' class='post-link' data-action='edit_team_admin.php' data-id='{$team['TeamID']}'>Bewerken</a></td>";
         echo "<td><a href='#' class='post-link' data-action='delete_team.php' data-id='{$team['TeamID']}'>Verwijderen</a></td>";
 
         echo "</tr>";
