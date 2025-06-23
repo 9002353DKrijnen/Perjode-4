@@ -29,14 +29,17 @@ We will begin by creating an sql command. But we will first make a regular html 
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Teams</title>
+    <link rel="stylesheet" href="../style.css">
 </head>
 
 <body>
     <?php
 
-    // sqlQuery
+    // sqlQuery with group_concat that takes mulitple rows from username to a single row
     $sqlQuery = "SELECT teamnaam, TeamID, GROUP_CONCAT(username ORDER BY id SEPARATOR ' - ')
      AS spelers FROM teams GROUP BY TeamID, teamnaam";
+
+
     // prepare statement
     $statement = $conn->prepare($sqlQuery);
 
@@ -50,16 +53,22 @@ We will begin by creating an sql command. But we will first make a regular html 
     // table with teams
 
     echo "<table>";
-    echo "<thead border='1' cellpadding='10'><tr><th>Teamnaam</th><th>Spelers</th></tr></thead>";
+
+    // table header with basic design
+    echo "<thead><tr><th>Teamnaam</th><th>Spelers</th></tr></thead>";
+
+    // forach with teamname and players from database
     foreach ($result as $team) {
         echo "<tr>";
         echo "<td>{$team['teamnaam']} </td>";
         echo "<td>- {$team['spelers']}</td>";
+
+        // edit and delete buttons
         echo "<td><a href='edit_team.php?team_id={$team['TeamID']}'>Bewerken</a></td>";
         echo "<td><a href='delete_team.php?team_id={$team['TeamID']}'>Verwijderen</a></td>";
         echo "</tr>";
     }
-
+echo "</table>";
     ?>
 </body>
 

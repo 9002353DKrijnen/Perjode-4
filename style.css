@@ -122,6 +122,19 @@ div:hover {
 }
 
 body {
+  background: white;
+}
+
+table {
+  position: relative;
+  display: block;
+  margin: 0 auto;
+  border-collapse: collapse;
+  border: 1px solid black;
+  width: 50%;
+}
+
+body {
   font-family: Arial, sans-serif;
   text-align: center;
   background-color: black;
