@@ -21,7 +21,7 @@
 
        <form action="" method="post" class="form">
            <label for="teamnaam">Teamnaam</label>
-           <input type="text" id="teamnaam" name="teamnaam" placeholder="Teamnaam">
+           <input type="text" id="teamnaam" name="teamnaam" placeholder="Teamnaam" class="button">
 
            <?php
             // sql query and statement
@@ -36,7 +36,7 @@
             $result = $statement->fetchAll();
 
             // foreach loop for result (input)
-            echo "<select name='user_1'>";
+            echo "<select name='user_1' class='button'>";
             foreach ($result as $user) {
                 // instead of string concatenation we use string interpolation, because I find it much easier to read. 
                 echo "<option value='{$user['username']}'>{$user['username']} </option>";
@@ -44,7 +44,7 @@
             echo "</select>";
 
             // per team 2 users
-            echo "<select name='user_2'>";
+            echo "<select name='user_2' class='button'>";
             foreach ($result as $user) {
                 // instead of string concatenation we use string interpolation, because I find it much easier to read. 
                 echo "<option value='{$user['username']}'>{$user['username']} </option>";
@@ -53,7 +53,7 @@
 
             ?>
 
-           <input type="submit" value="Team toevoegen">
+           <input type="submit" value="Team toevoegen" class="button">
 
        </form>
 
@@ -76,9 +76,10 @@
                position: fixed;
                width: 100%;
                text-align: center;
-               height: 40%;
+               height: 20%;
                top: 0;
                left: 0;
+
             p{
                 color: white;
             }
@@ -142,7 +143,11 @@
                 ':username' => $user[$i]
             ]);
         }
-
+        if($statement){
+            // succes rederict 
+            header("Location: ../teams.php");
+            exit;
+        }
         ?>
 
 
