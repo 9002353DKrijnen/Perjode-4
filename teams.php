@@ -38,6 +38,7 @@
     // foreach team generate a row with players
     foreach ($result as $team) {
         echo "<tr>";
+        // htmlspecialchars to prevent XSS attacks
         echo "<td>" . htmlspecialchars($team['teamnaam']) . "</td>";
         echo "<td>" . htmlspecialchars($team['spelers']) . "</td>";
         echo "</tr>";

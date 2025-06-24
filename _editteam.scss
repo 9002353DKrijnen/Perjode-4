@@ -1,0 +1,63 @@
+#editTeams {
+    background-color: white;
+    color: black;
+
+    p {
+        color: black;
+    }
+
+    table {
+        position: relative;
+        top: 0;
+        left: 0;
+        right: 0;
+        border-collapse: collapse;
+        width: max-content;
+        margin: 0 auto;
+        padding: 20px;
+        border: 1px solid #000;
+        border-radius: $buttonBorderRadius;
+        display: inline-block;
+        box-shadow: 0 0 10px rgba(0, 0, 0, 0.3);
+
+        th {
+            padding: 10px;
+            text-align: center;
+            border: 1px solid #000;
+        }
+
+        thead{
+            background-color: black;
+            color: white;
+        }
+
+        tr,
+        td {
+            border: 1px solid #000;
+            padding: 10px;
+            text-align: center;
+        }
+
+        td{
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.3);
+                &:hover {
+                    box-shadow: 0 0 20px rgba(0, 0, 0, 0.5);
+                }
+        }
+
+        a {
+            background-color: blue;
+            text-decoration: none;
+            color: white;
+            display: inline-block;
+            transition: transform 0.3s ease-in-out;
+            border-radius: $buttonBorderRadius;
+            padding: 10px;
+
+
+            &:hover {
+                transform: scale(1.3);
+            }
+        }
+    }
+}
