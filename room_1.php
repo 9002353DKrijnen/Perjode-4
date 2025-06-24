@@ -1,9 +1,15 @@
 <?php
+// start session
 session_start();
+
+// if no user id is set, sent the user to login
 if (!isset($_SESSION["user_id"])) {
     header("Location: user/login.php");
     exit;
 }
+
+
+// include database
 include 'dbcon.php';
 
 
@@ -21,7 +27,6 @@ if (!isset($_SESSION['start_time'])) {
 }
 
 // endtime is being calculated by adding the duration to the start time. If it expires the user will be sent to lose.php
-
 // current time in $currentTime with the functions time()
 
 $endTime = $_SESSION['start_time'] + $_SESSION['duration'];
@@ -37,20 +42,30 @@ if (time() > $endTime) {
 }
 
 
-// room id
+// room id. this is used in order to determine which room the user is in
 $roomId = 1;
+
+
 // question index
 $questionIndex = $_SESSION['questionIndex'] ?? 0;
 
+
+// questions from database by roomid
 $stmt = $conn->prepare("SELECT * FROM questions WHERE roomId = :roomId");
+
+// execute query
 $stmt->execute(['roomId' => $roomId]);
+
+// fetch questions
 $questions = $stmt->fetchAll(PDO::FETCH_ASSOC);
 
+
+// if no questions are found exit
 if (count($questions) === 0) {
     echo "Geen vragen gevonden voor deze kamer.";
     exit;
 }
-
+// on submit check user anwser with correct anwser
 if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     $userAnswer = trim(strtolower($_POST['answer']));
     $correctAnswer = strtolower($questions[$questionIndex]['answer']);
@@ -65,11 +80,13 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
             exit;
         }
     } else {
+
+        // show hint if incorrect question
         $hint = $questions[$questionIndex]['hint'];
         echo "<p style='color:red;'>Fout antwoord. Hint: $hint</p>";
     }
 }
-
+// currentquestion is the current question from the database in an array
 $currentQuestion = $questions[$questionIndex];
 ?>
 
@@ -81,11 +98,13 @@ $currentQuestion = $questions[$questionIndex];
     <title>Napoleon's Code</title>
     <link rel="stylesheet" href="style.css">
 </head>
-
+<!-- add the question index to the body element -->
 <body data-question="<?= $questionIndex ?>">
 
 
     <?php
+    // use a switch statement to determine which question to show
+    // each +1 adds one to the index, thus adding a case +1 = case 1
     switch ($questionIndex) {
         case 0: ?>
             <h1>Room 1 - Vraag <?= $questionIndex + 1 ?></h1>
@@ -112,7 +131,10 @@ $currentQuestion = $questions[$questionIndex];
             </form>
         <?php
             break;
-        case 1: ?>
+        case 1: 
+        
+        
+        // to each question a different room using switch ?>
             <h1>Room 1 - Vraag <?= $questionIndex + 1 ?></h1>
             <p><?= $currentQuestion['question'] ?></p>
             <p id="timeRemaining" value="<?= $timeleft ?>"><?php echo $timeleft; ?></p>
@@ -167,6 +189,8 @@ $currentQuestion = $questions[$questionIndex];
             break;
     }
     ?>
+
+    <!-- import script -->
 
     <script src="./app.js"></script>
 </body>

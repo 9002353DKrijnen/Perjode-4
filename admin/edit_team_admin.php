@@ -23,6 +23,8 @@ $stmtUsers = $conn->prepare($sqlUsers);
 $stmtUsers->execute();
 $allUsers = $stmtUsers->fetchAll(PDO::FETCH_COLUMN);
 
+
+// if form is submitted, update team
 if ($_SERVER['REQUEST_METHOD'] === 'POST' && isset($_POST['update'])) {
     $ids = $_POST['id'] ?? [];
     $usernames = $_POST['username'] ?? [];
@@ -33,6 +35,8 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST' && isset($_POST['update'])) {
         $stmtUpdate = $conn->prepare($sqlUpdate);
 
         foreach ($ids as $index => $id) {
+
+            
             // Check if username already exists
             $stmtUpdate->execute([
                 'username' => $usernames[$index],
@@ -50,8 +54,15 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST' && isset($_POST['update'])) {
 
 // get team members
 $sqlMembers = "SELECT id, username, score FROM teams WHERE TeamID = :teamid ORDER BY id";
+
+
+// run the query
 $stmtMembers = $conn->prepare($sqlMembers);
+
+// execute query by team id
 $stmtMembers->execute(['teamid' => $teamId]);
+
+// fetch associative array
 $members = $stmtMembers->fetchAll(PDO::FETCH_ASSOC);
 ?>
 
@@ -60,6 +71,7 @@ $members = $stmtMembers->fetchAll(PDO::FETCH_ASSOC);
 
 <head>
     <meta charset="UTF-8" />
+    <!-- use htmlspecialchars to prevent xss attacks -->
     <title>Team bewerken - <?= htmlspecialchars($teamData['teamnaam']) ?></title>
 </head>
 
