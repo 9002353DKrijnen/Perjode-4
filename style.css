@@ -108,6 +108,19 @@ div:hover {
   transition: all 0.3s ease-in-out;
 }
 
+#table {
+  width: 100%;
+  top: 0;
+  left: 0;
+  right: 0;
+  border-collapse: collapse;
+  margin: 0 auto;
+  border: 1px solid #000;
+}
+#table * {
+  color: white;
+}
+
 body {
   font-family: Arial, sans-serif;
   text-align: center;
