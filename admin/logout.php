@@ -1,6 +1,26 @@
 <?php
-session_start();       // Start de sessie (om sessiegegevens te kunnen beheren)
-session_destroy();     // Vernietig alle sessiegegevens (logt de gebruiker uit)
-header("Location: ../index.php");  // Redirect naar de hoofdpagina
-exit;                  // Stop de uitvoering van het script
+session_start();
+
+// Vernietig alle sessiegegevens
+$_SESSION = [];
+
+// Verwijder het sessie-cookie
+if (ini_get('session.use_cookies')) {
+    $params = session_get_cookie_params();
+    setcookie(
+        session_name(),
+        '',
+        time() - 42000,
+        $params['path'],
+        $params['domain'],
+        $params['secure'],
+        $params['httponly']
+    );
+}
+
+session_destroy();
+
+// Doorsturen naar de HOOFD-index (niet admin/index.php)
+header('Location: ../index.php?logout=1');
+exit;
 ?>
