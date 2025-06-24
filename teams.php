@@ -52,8 +52,10 @@
     ?>
     <!-- button to make teams -->
     <a href="./user/add_team.php">
-        <p>Maak teams</p>
+        <p id="button">Maak teams</p>
     </a>
+
+
 </body>
 
 </html>
