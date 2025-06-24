@@ -145,9 +145,7 @@
 
         ?>
 
-<a href="./admin/edit_teams.php">
-    <p>Bewerk teams</p>
-</a>
+
 
    </body>
 

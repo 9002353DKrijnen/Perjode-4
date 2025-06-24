@@ -190,6 +190,12 @@ if ($_SERVER["REQUEST_METHOD"] === "POST") {
           Uitloggen
         </a>
       </section>
+
+      <section class="button">
+        <a href="./teams.php" style="color: white; text-decoration: none;">
+          teams
+        </a>
+      </section>
     </section>
     
     <!-- Afbeelding -->
