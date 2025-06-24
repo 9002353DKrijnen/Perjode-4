@@ -4,6 +4,6 @@ session_unset();
 session_destroy();
 
 // Doorsturen naar de HOOFD-index (niet admin/index.php)
-header('Location: ../index.php?logout=1');
+header("Location: ../index.php");
 exit;
 ?>
