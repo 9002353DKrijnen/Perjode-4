@@ -24,7 +24,7 @@ $stmt = $conn->prepare("
     SELECT score, completion_time 
     FROM scores 
     WHERE user_id = :user_id 
-    ORDER BY score DESC, completion_time ASC 
+    ORDER BY score ASC, completion_time desc 
     LIMIT 1
 ");
 $stmt->execute(['user_id' => $_SESSION["user_id"]]);

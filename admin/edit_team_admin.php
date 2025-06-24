@@ -30,13 +30,14 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST' && isset($_POST['update'])) {
     $usernames = $_POST['username'] ?? [];
     $scores = $_POST['score'] ?? [];
 
+    // check if all arrays have the same length
     if (count($ids) === count($usernames) && count($ids) === count($scores)) {
         $sqlUpdate = "UPDATE teams SET username = :username, score = :score WHERE id = :id";
         $stmtUpdate = $conn->prepare($sqlUpdate);
 
         foreach ($ids as $index => $id) {
 
-            
+
             // Check if username already exists
             $stmtUpdate->execute([
                 'username' => $usernames[$index],
