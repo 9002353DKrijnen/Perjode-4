@@ -14,7 +14,7 @@ $stmt = $conn->prepare("
     SELECT u.username, s.score, s.completion_time 
     FROM scores s
     JOIN users u ON s.user_id = u.id
-    ORDER BY s.score DESC, s.completion_time ASC
+    ORDER BY s.score ASC, s.completion_time DESC
 ");
 $stmt->execute();
 $scores = $stmt->fetchAll(PDO::FETCH_ASSOC); // Sla alle scores op als associatieve array
